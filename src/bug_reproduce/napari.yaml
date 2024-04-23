@@ -1,0 +1,30 @@
+name: bug-reproduce
+display_name: bug_reproduce
+# use 'hidden' to remove plugin from napari hub search results
+visibility: public
+# see https://napari.org/stable/plugins/manifest.html for valid categories
+categories: ["Annotation", "Segmentation", "Acquisition"]
+contributions:
+  commands:
+    - id: bug-reproduce.make_container_widget
+      python_name: bug_reproduce:ImageThreshold
+      title: Make threshold Container widget
+    - id: bug-reproduce.make_magic_widget
+      python_name: bug_reproduce:threshold_magic_widget
+      title: Make threshold magic widget
+    - id: bug-reproduce.make_function_widget
+      python_name: bug_reproduce:threshold_autogenerate_widget
+      title: Make threshold function widget
+    - id: bug-reproduce.make_qwidget
+      python_name: bug_reproduce:ExampleQWidget
+      title: Make example QWidget
+  widgets:
+    - command: bug-reproduce.make_container_widget
+      display_name: Container Threshold
+    - command: bug-reproduce.make_magic_widget
+      display_name: Magic Threshold
+    - command: bug-reproduce.make_function_widget
+      autogenerate: true
+      display_name: Autogenerate Threshold
+    - command: bug-reproduce.make_qwidget
+      display_name: Example QWidget
